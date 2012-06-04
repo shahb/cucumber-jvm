@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Cucumber-jvm : Cucumber for the JVM (successor of Cuke4Duke)" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cucumber-jvm</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shahb/cucumber-jvm">View on GitHub</a>
+
+          <h1 id="project_title">Cucumber-jvm</h1>
+          <h2 id="project_tagline">Cucumber for the JVM (successor of Cuke4Duke)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/shahb/cucumber-jvm/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shahb/cucumber-jvm/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Cucumber-JVM is a pure Java implementation of Cucumber that supports the following programming languages:</p>
+
+<ul>
+<li>Clojure</li>
+<li>Groovy</li>
+<li>Ioke</li>
+<li>Java</li>
+<li>JavaScript (Rhino interpreter)</li>
+<li>Python (Jython interpreter)</li>
+<li>Ruby (JRuby interpreter)</li>
+<li>Scala</li>
+</ul><p>Cucumber-JVM provides the following mechanisms for running Cucumber Features:</p>
+
+<ul>
+<li>Command Line</li>
+<li>JUnit (via IDE, Maven, Ant or anything that knows how to run JUnit)</li>
+</ul><p>Cucumber-JVM also integrates with the following Dependency Injection containers:</p>
+
+<ul>
+<li>Guice</li>
+<li>PicoContainer</li>
+<li>Spring</li>
+<li>CDI/Weld</li>
+</ul><h2>Downloading / Installation</h2>
+
+<p>Final releases will be published in <a href="http://search.maven.org/">Maven Central</a> when all issues in <a href="https://github.com/cucumber/cucumber-jvm/issues?milestone=1&amp;state=open">Milestone 1</a> are closed. Until then you can grab 
+SNAPSHOT releases by adding this repo to your POM:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>sonatype-snapshots<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://oss.sonatype.org/content/repositories/snapshots<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/repository&gt;</span>
+</pre>
+</div>
+
+
+<p>Now you can grab jars with the following dependency in your POM:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>info.cukes<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>cucumber-core<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre>
+</div>
+
+
+<p>If you are not using Maven you can download the SNAPSHOT jars manually from <a href="https://oss.sonatype.org/content/repositories/snapshots/info/cukes/">https://oss.sonatype.org/content/repositories/snapshots/info/cukes/</a></p>
+
+<h2>Documentation</h2>
+
+<p>There isn't any documentation yet apart from API docs. Documentation will be published when the first release candidate for 1.0.0 is ready.
+If you are adventurous, check out the examples, read the code and ask specific questions on the Cucumber mailing list.</p>
+
+<h3>API Docs</h3>
+
+<ul>
+<li>
+<a href="http://cukes.info/cucumber/jvm/api/1.0.0-SNAPSHOT/apidocs/">http://cukes.info/cucumber/jvm/api/1.0.0-SNAPSHOT/apidocs/</a> (URL subject to change)</li>
+</ul><h2>Examples</h2>
+
+<p>You will find an example in Git under examples/java-calculator. You should be able to run <code>basic_arithmetic.feature</code> by running the <code>cucumber.examples.java.calculator.basic_arithmetic_Test</code> JUnit test from your IDE. -Or simply by running it with Maven: <code>mvn clean install -P examples</code> once to build it all. Then <code>cd examples/java-calculator</code> followed by <code>mvn test</code> each time you make a change. Try to make the feature fail!</p>
+
+<h2>Hacking</h2>
+
+<p>To hack on Cucumber-JVM you need a JDK, Maven and Git to get the code. You also need to set your IDE/text editor to use:</p>
+
+<ul>
+<li>UTF-8 file encoding</li>
+<li>LF (UNIX) line endings</li>
+<li>4 Space indent (no tabs)
+
+<ul>
+<li>Java</li>
+<li>XML</li>
+</ul>
+</li>
+<li>2 Space indent (no tabs)
+
+<ul>
+<li>Gherkin</li>
+</ul>
+</li>
+</ul><p>If we get a pull request where an entire file is changed because of insignificant whitespace changes we cannot see what you have changed.</p>
+
+<h3>Building Cucumber-JVM</h3>
+
+<p>You'll need Maven to build the Java code (we're happily accepting patches for other build systems). To build and run tests, run:</p>
+
+<pre><code>mvn clean install
+</code></pre>
+
+<h3>Continuous Integration</h3>
+
+<p><a href="http://jenkins-01.public.cifoundry.net/job/Cucumber%20JVM/">http://jenkins-01.public.cifoundry.net/job/Cucumber%20JVM/</a></p>
+
+<h3>Running cross-platform Cucumber features</h3>
+
+<p>All Cucumber implementations (cucumber-ruby, cucumber-jvm, cucumber-js) share a common set of Cucumber features to ensure all implementations support the same basic features. To run these you need to clone the cucumber-features into your cucumber-jvm working copy:</p>
+
+<pre><code>git submodule update --init
+</code></pre>
+
+<p>Now you can run the cross-platform Cucumber features:</p>
+
+<pre><code>gem install bundler
+bundle install
+rake
+</code></pre>
+
+<h3>Code generation</h3>
+
+<p>StepDefinition APIs in all of Gherkin's supported i18n languages are generated using Ruby. 
+The i18n Java annotations (except English) are not added to the Git repo because Git on both OS X and Windows handles UTF-8 file names badly.
+In order to compile <code>cucumber-java</code> with all I18n annotations, you have to generate them yourself.
+With Ruby installed and on your path, install some gems that are needed for code generation:</p>
+
+<h4>Using bundler</h4>
+
+<p>Try this first</p>
+
+<pre><code>gem install bundler
+bundle install
+</code></pre>
+
+<p>Now you can generate the code:</p>
+
+<pre><code>rake generate
+</code></pre>
+
+<h4>Without bundler</h4>
+
+<p>On Windows it might be tricky to install all the gems. (The listed gems are used for both code generation and for running the cross-platform features). If you only want to generate code, you can get away with:</p>
+
+<pre><code>gem install gherkin
+rake generate SKIP_BUNDLER=true
+</code></pre>
+
+<h2>Troubleshooting</h2>
+
+<p>Below are some common problems you might encounter while hacking on Cucumber-JVM - and solutions.</p>
+
+<h3>IntelliJ Idea fails to compile the generated I18n Java annotations</h3>
+
+<p>This can be solved by changing the Compiler settings: <code>Preferences -&gt; Compiler -&gt; Java Compiler</code>:</p>
+
+<ul>
+<li>
+<em>Use compiler:</em> <code>Javac in-process (Java6+ only)</code>
+</li>
+<li>
+<em>Additional command line parameters:</em> <code>-target 1.6 -source 1.6 -encoding UTF-8</code>
+</li>
+</ul><h2>Contributing fixes</h2>
+
+<p>Fork the repository on Github, clone it and send a pull request when you have fixed something. Please commit each feature/bugfix on a separate branch as this makes it easier for us to decide what to merge and what not to merge.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cucumber-jvm maintained by <a href="https://github.com/shahb">shahb</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32379155-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
